@@ -1,0 +1,2 @@
+# mynote
+GitNote Repository
