@@ -1,6 +1,6 @@
 # package-info.java的作用
 **1. 为标注在包上Annotation提供便利**
-可以为整个包添加
+可以为整个包添加注解，例如在package-info.java中添加Deprecated注解后，其他类应用时会给出警告。
 
 **2. 声明友好类和包常量**
 比如一个包中有很多的内部访问的类或常量，就可以统一的放到package-info类中，这样就方便，而且集中管理，减少friendly类到处游走的情况（文中原话）
