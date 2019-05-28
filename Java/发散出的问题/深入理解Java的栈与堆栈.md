@@ -7,4 +7,6 @@
 6. 包装类数据Integer,Short,Long,Byte,Float,Double,Boolean,Character，java对象存在堆中。
 7. java的对象引用存在栈中，对象存在堆中。
 8. 静态存储，对象中的static元素。
-9. 常量存储，常量存储在
+9. 常量存储，常量存储在程序代码内部。嵌入式有时可以放在ROM中。
+10. 非Ram存储，程序之外，不运行也存在（文件？）
+11. 
