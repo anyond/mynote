@@ -22,3 +22,16 @@ String str = "abc";
 ## 缓冲机制
 1. JDK API文档中对这个新的valueOf方法有明确的解释： 
 如果不需要新的 Integer 实例，则通常应优先使用该方法，而不是构造方法 Integer(int)，因为该方法有可能通过缓存经常请求的值而显著提高空间和时间性能 
+查看Integer的valueOf方法的：
+```
+    public static Integer valueOf(int i) {
+        assert IntegerCache.high >= 127;
+        //static final int low = -128;
+        //当-128=<i<=127的时候，就直接在缓存中取出 i de  Integer 类型对象
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        //否则就在堆内存中创建
+        return new Integer(i);
+    }
+```
+看出对于范围 [-128,127] 的整数，valueOf 方法做了特殊处理。采用IntegerCache.cache[i + (-IntegerCache.low)]; 这个方法
