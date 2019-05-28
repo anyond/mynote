@@ -35,7 +35,7 @@ String str = "abc";
     }
 ```
 看出对于范围 [-128,127] 的整数，valueOf 方法做了特殊处理。采用IntegerCache.cache[i + (-IntegerCache.low)]; 这个方法
-2.其他的包装器: 
+2.其他的包装器: 	
 Boolean： (全部缓存) 
 Byte： (全部缓存)
 
