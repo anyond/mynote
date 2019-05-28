@@ -6,3 +6,5 @@
 5. 基本类型int,short,long,byte,float,double,boolean,char存在栈中。
 6. 包装类数据Integer,Short,Long,Byte,Float,Double,Boolean,Character，java对象存在堆中。
 7. java的对象引用存在栈中，对象存在堆中。
+8. 静态存储，对象中的static元素。
+9. 常量存储，常量存储在
