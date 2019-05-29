@@ -17,6 +17,10 @@ DML指令
 授权
 DBA权限
 
+drop trunc create
+
+DCL
+
 DBLINK
 
 ---
