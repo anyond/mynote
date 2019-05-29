@@ -13,6 +13,11 @@
 删除
 
 DML指令
+创建表
+授权
+DBA权限
+
+DBLINK
 
 ---
 # Oracle查询优化
