@@ -1,6 +1,6 @@
 # Oracle内置函数
-|序号|column2|column3|
-|-|-|-|
+|序号|函数|作用|用法|
+|-|-|-|-|
 |content1|content2|content3|
 
 --- 
