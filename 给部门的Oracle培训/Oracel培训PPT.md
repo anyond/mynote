@@ -5,7 +5,7 @@
 
 --- 
 # Oracle 基本使用
-DQL语句
+DQL语句 sql语句
  DML（Data Manipulation Language，数据操作语言）：用于检索或者修改数据。
     DML包括：  SELECT：用于检索数据；
         INSERT：用于增加数据到数据库；
@@ -63,7 +63,7 @@ Oracle 导入 导出
 特殊符号的密码 ''' ''''
 ---
 plsql的使用
-保存密码，快捷输入
+保存密码，快捷输入，
 ---
 # 存储过程
 试用场景
