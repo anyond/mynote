@@ -5,9 +5,30 @@
 
 --- 
 # Oracle 基本使用
-DDL 需要commit
+DQL语句
+ DML（Data Manipulation Language，数据操作语言）：用于检索或者修改数据。
+    DML包括：  SELECT：用于检索数据；
+        INSERT：用于增加数据到数据库；
+        UPDATE：用于从数据库中修改现存的数据 
+        DELETE：用于从数据库中删除数据。
+
+需要commit
+
 查询，左连接，右链接
 
+DDL（Data Definition Language，数据定义语言）： 用于定义数据的结构，比如 创建、修改或者删除数据库对象。
+    DDL包括：DDL语句可以用于创建用户和重建数据库对象。下面是DDL命令：
+        CREATE TABLE：创建表
+        ALTER TABLE
+        DROP TABLE：删除表
+        CREATE INDEX
+        DROP INDEX
+DCL（Data Control Language，数据控制语言）：用于定义数据库用户的权限。
+    DCL包括：
+        ALTER PASSWORD 
+        GRANT 
+        REVOKE 
+        CREATE SYNONYM
 插入
 正常插入
 字段不一致的表如何插入
