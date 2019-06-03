@@ -15,3 +15,8 @@ SERVICE_NAME ： 远程数据库的实例名
 -- 查询、删除和插入数据和操作本地的数据库是一样的，只不过表名需要写成“表名@dblink服务器”而已。 
 
 select * from db.tb_test@TestDblink;
+
+1、查看所有的数据库链接，登录管理员查看  
+select owner,object_name from dba_objects where object_type='DATABASE LINK';
+2.删除数据库连接
+drop database link TestDblink;
