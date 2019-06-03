@@ -11,3 +11,7 @@ dbPassword：表示 远程数据库的密码
 HOST ： 表示远程数据库IP
 PORT ： 表示远程数据库端口
 SERVICE_NAME ： 远程数据库的实例名
+
+-- 查询、删除和插入数据和操作本地的数据库是一样的，只不过表名需要写成“表名@dblink服务器”而已。 
+
+select * from db.tb_test@TestDblink;
