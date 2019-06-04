@@ -15,7 +15,7 @@ tables=(inner_notify,notify_staff_relat) 
 将数据库中的表table1中的字段filed1以"00"打头的数据导出
 exp 
 system/manager@TEST 
-file=d:\daochu.dmp
+file=d:\daochu.dmp tables=(table1) query=
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
