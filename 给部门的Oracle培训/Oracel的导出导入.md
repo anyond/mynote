@@ -15,7 +15,7 @@ expdp scott/tiger@orcl tables=emp,dept dumpfile=expdp.dmp directory=dump_dir;
 3)按查询条件导
 expdp scott/tiger@orcl directory=dump_dir dumpfile=expdp.dmp tables=empquery='where deptno=20';
 4)按表空间导
-expdp system/manager@orcl directory=dump_dir dumpfile=tablespace.dmptablespaces=temp,example;
+expdp system/manager@orcl directory=dump_dir dumpfile=tablespace.dmp tablespaces=temp,example;
 5)导整个数据库
 expdp system/manager@orcl directory=dump_dir dumpfile=full.dmp full=y;
 四、用impdp导入数据
