@@ -8,8 +8,8 @@ exp scott/tiger@orcl file=c:\scott.dmp owner=scotttables=(table1,table2)
 
 1、导出整个数据库：
 imp system/manager file=c:\full.dmp full=y
-2、导出指定
-IMP SONIC/SONIC BUFFER=64000 FILE=C:\SONIC.DMP FROMUSER=SONIC TOUSER=SONIC
+2、导入
+imp sonic/sonic buffer=64000 file=c:\sonic.dmp fromuser=sonic touser=sonic
 3、表模式：
 IMP SONIC/SONIC    BUFFER=64000 FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(SONIC) 
 
