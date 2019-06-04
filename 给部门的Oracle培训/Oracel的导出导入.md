@@ -11,7 +11,7 @@ imp system/manager file=c:\full.dmp full=y
 2)导入指定用户的对象
 imp scott/tiger@orcl file=c:\scott.dmp fromuser=scott touser=scott
 3)导入指定的表
-imp scott/tiger@orcl file=c:\scott.dmp owner=scott tables=(scott)
+imp scott/tiger@orcl file=c:\scott.dmp owner=scott tables=(table1,table2)
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
