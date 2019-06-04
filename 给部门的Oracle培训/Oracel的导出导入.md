@@ -25,6 +25,7 @@ create tablespace tb_name datafile 'D:\tablespace\tb_name.dbf' size 1024m AUTOEX
 --创建用户
 create user user_name identified by A123456a default tablespace tb_name temporary tablespace TEMP;
 --给用户授权
+其实问题的核心不在于dba权限，而在于 EXP_FULL_DATABASE / IMP_FULL_DATABASE 角色。
 sql>grant read,write on directory dump_dir to user_name;
 sql>grant dba,resource,unlimited tablespace to user_name;
 1)导入用户（从用户scott导入到用户scott）
