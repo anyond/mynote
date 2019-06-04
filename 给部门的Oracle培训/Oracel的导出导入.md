@@ -9,9 +9,9 @@ exp scott/tiger@orcl file=c:\scott.dmp owner=scotttables=(table1,table2)
 1、导出整个数据库：
 imp system/manager file=c:\full.dmp full=y
 2、导入
-imp sonic/sonic buffer=64000 file=c:\sonic.dmp fromuser=sonic touser=sonic
+imp scott/tiger@orcl file=c:\sonic.dmp fromuser=sonic touser=sonic
 3、表模式：
-IMP SONIC/SONIC    BUFFER=64000 FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(SONIC) 
+IMP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(SONIC) 
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
