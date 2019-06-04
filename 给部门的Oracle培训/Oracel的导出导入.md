@@ -1,4 +1,12 @@
 1. exp/imp导出导入
+将数据库TEST完全导出
+exp system/manager@TEST file=d:\daochu.dmp full=y
+将数据库中system用户与sys用户的表导出
+exp 
+system/manager@TEST 
+file=d:\daochu.dmp 
+owner=(system,sys)
+将数据库中的表inner_notify、notify_staff_relat导出
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
