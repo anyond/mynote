@@ -38,6 +38,15 @@ impdp system/manager@orcl directory=dump_dir dumpfile=tablespace.dmp tablespaces
 4)导入数据库
 impdb system/manager@orcl directory=dump_dir dumpfile=full.dmp full=y;
 5)追加数据
-impdp system/manager@orcl directory=dump_dir dumpfile=expdp.dmp schemas=systemtable_exists_action
+impdp system/manager@orcl directory=dump_dir dumpfile=expdp.dmp schemas=system table_exists_action
+table_exists_action：
+
+skip 是如果已存在表，则跳过并处理下一个对象；
+
+append是为表增加数据;
+
+truncate是截断表，然后为其增加新数据；
+
+replace是删除已存在表，重新建表并追加数据;
 3. sql导出导入
 4. 文本导出导入
