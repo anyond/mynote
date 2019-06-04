@@ -1,16 +1,16 @@
 1. exp/imp导出导入
 1)导出整个数据库
 exp scott/tiger@orcl file=c:\full.dmp full=y
-2)导出指定用户的表：
+2)导出指定用户的表
 exp scott/tiger@orcl file=c:\scott.dmp owner=sonic
-3)导出指定的表：
+3)导出指定的表
 exp scott/tiger@orcl file=c:\scott.dmp owner=scotttables=(table1,table2)
 
-1)导入整个数据库：
+1)导入整个数据库
 imp system/manager file=c:\full.dmp full=y
-2)导入
+2)导入指定用户的对象
 imp scott/tiger@orcl file=c:\scott.dmp fromuser=scott touser=scott
-3)表模式：
+3)导入指定的表
 imp scott/tiger@orcl file=c:\scott.dmp owner=scott tables=(scott)
 
 其中expdp/impdp比exp/imp多了用户及其权限
