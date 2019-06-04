@@ -18,5 +18,24 @@ expdp scott/tiger@orcl directory=dump_dir dumpfile=expdp.dmp tables=empquery='wh
 expdp system/manager@orcl directory=dump_dir dumpfile=tablespace.dmptablespaces=temp,example;
 5)导整个数据库
 expdp system/manager@orcl directory=dump_dir dumpfile=full.dmp full=y;
+四、用impdp导入数据
+在正式导入数据前，要先确保要导入的用户已存在，如果没有存在，请先用下述命令进行新建用户
+--创建表空间
+create tablespace tb_name datafile 'D:\tablespace\tb_name.dbf' size 1024m AUTOEXTEND ON;
+--创建用户
+create user user_name identified by A123456a default tablespace tb_name temporary tablespace TEMP;
+--给用户授权
+sql>grant read,write on directory dump_dir to user_name;
+sql>grant dba,resource,unlimited tablespace to user_name;
+1)导入用户（从用户scott导入到用户scott）
+impdp scott/tiger@orcl directory=dump_dir dumpfile=expdp.dmp schemas=scott;
+2)导入表（从scott用户中把表dept和emp导入到system用户中）
+impdp system/manager@orcl directory=dump_dir dumpfile=expdp.dmptables=scott.dept,scott.emp remap_schema=scott:system;
+3)导入表空间
+impdp system/manager@orcl directory=dump_dir dumpfile=tablespace.dmp tablespaces=example;
+4)导入数据库
+impdb system/manager@orcl directory=dump_dir dumpfile=full.dmp full=y;
+5)追加数据
+impdp system/manager@orcl directory=dump_dir dumpfile=expdp.dmp schemas=systemtable_exists_action
 3. sql导出导入
 4. 文本导出导入
