@@ -1,21 +1,17 @@
 1. exp/imp导出导入
-将数据库TEST完全导出
-exp system/manager@TEST file=d:\daochu.dmp full=y
-将数据库中system用户与sys用户的表导出
-exp 
-system/manager@TEST 
-file=d:\daochu.dmp 
-owner=(system,sys)
-将数据库中的表inner_notify、notify_staff_relat导出
-exp 
-aichannel/aichannel@TESTDB2 
-file= 
-d:\data\newsmgnt.dmp
-tables=(inner_notify,notify_staff_relat) 
-将数据库中的表table1中的字段filed1以"00"打头的数据导出
-exp 
-system/manager@TEST 
-file=d:\daochu.dmp tables=(table1) query=
+1、完全：
+EXP SYSTEM/MANAGER BUFFER=64000 FILE=C:\FULL.DMP FULL=Y
+2、用户模式：
+EXPSONIC/SONIC    BUFFER=64000 FILE=C:\SONIC.DMP OWNER=SONIC
+3、表模式：
+EXP SONIC/SONIC   BUFFER=64000 FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(SONIC)
+
+1、完全：
+IMP SYSTEM/MANAGER BUFFER=64000 FILE=C:\FULL.DMP FULL=Y
+2、用户模式：
+IMP SONIC/SONIC BUFFER=64000 FILE=C:\SONIC.DMP FROMUSER=SONIC TOUSER=SONIC
+3、表模式：
+IMP SONIC/SONIC    BUFFER=64000 FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(SONIC) 
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
