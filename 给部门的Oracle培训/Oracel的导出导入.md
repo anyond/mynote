@@ -6,12 +6,12 @@ exp scott/tiger@orcl file=c:\scott.dmp owner=sonic
 3)导出指定的表：
 exp scott/tiger@orcl file=c:\scott.dmp owner=scotttables=(table1,table2)
 
-1、导出整个数据库：
+1)导入整个数据库：
 imp system/manager file=c:\full.dmp full=y
-2、导入
-imp scott/tiger@orcl file=c:\sonic.dmp fromuser=sonic touser=sonic
-3、表模式：
-IMP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(SONIC) 
+2)导入
+imp scott/tiger@orcl file=c:\scott.dmp fromuser=scott touser=scott
+3)表模式：
+imp scott/tiger@orcl file=c:\scott.dmp owner=scott tables=(scott)
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
