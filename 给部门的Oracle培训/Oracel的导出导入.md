@@ -1,10 +1,10 @@
 1. exp/imp导出导入
 1)导出整个数据库
-EXP SYSTEM/MANAGER FILE=C:\FULL.DMP FULL=Y
+exp scott/tiger@orcl FILE=C:\FULL.DMP FULL=Y
 2)导出指定用户的表：
-EXP scott/tiger FILE=C:\SONIC.DMP OWNER=SONIC
+EXP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC
 3)导出制定的表：
-EXP scott/tiger@ FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(table1,table2)
+EXP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(table1,table2)
 
 1、导出整个数据库：
 IMP SYSTEM/MANAGER BUFFER=64000 FILE=C:\FULL.DMP FULL=Y
