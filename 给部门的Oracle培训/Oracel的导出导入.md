@@ -1,8 +1,8 @@
 1. exp/imp导出导入
 1)导出整个数据库
-exp scott/tiger@orcl FILE=C:\FULL.DMP FULL=Y
+exp scott/tiger@orcl file=c:\full.dmp full=y
 2)导出指定用户的表：
-EXP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC
+exp scott/tiger@orcl file=c:\sonic.dmp owner=sonic
 3)导出制定的表：
 EXP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(table1,table2)
 
