@@ -39,7 +39,7 @@ impdp system/manager@orcl directory=dump_dir dumpfile=tablespace.dmp tablespaces
 impdb system/manager@orcl directory=dump_dir dumpfile=full.dmp full=y;
 5)追加数据
 impdp system/manager@orcl directory=dump_dir dumpfile=expdp.dmp schemas=system table_exists_action
-table_exists_action：
+table_exists_action：append
 
 skip 是如果已存在表，则跳过并处理下一个对象；
 
