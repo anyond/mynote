@@ -2,12 +2,12 @@
 1)导出整个数据库
 exp scott/tiger@orcl file=c:\full.dmp full=y
 2)导出指定用户的表：
-exp scott/tiger@orcl file=c:\sonic.dmp owner=sonic
-3)导出制定的表：
-EXP scott/tiger@orcl FILE=C:\SONIC.DMP OWNER=SONIC TABLES=(table1,table2)
+exp scott/tiger@orcl file=c:\scott.dmp owner=sonic
+3)导出指定的表：
+exp scott/tiger@orcl file=c:\scott.dmp owner=scotttables=(table1,table2)
 
 1、导出整个数据库：
-IMP SYSTEM/MANAGER BUFFER=64000 FILE=C:\FULL.DMP FULL=Y
+imp system/manager file=c:\full.dmp full=y
 2、导出指定
 IMP SONIC/SONIC BUFFER=64000 FILE=C:\SONIC.DMP FROMUSER=SONIC TOUSER=SONIC
 3、表模式：
