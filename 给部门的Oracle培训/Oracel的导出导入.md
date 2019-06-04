@@ -7,6 +7,15 @@ system/manager@TEST 
 file=d:\daochu.dmp 
 owner=(system,sys)
 将数据库中的表inner_notify、notify_staff_relat导出
+exp 
+aichannel/aichannel@TESTDB2 
+file= 
+d:\data\newsmgnt.dmp
+tables=(inner_notify,notify_staff_relat) 
+将数据库中的表table1中的字段filed1以"00"打头的数据导出
+exp 
+system/manager@TEST 
+file=d:\daochu.dmp
 
 其中expdp/impdp比exp/imp多了用户及其权限
 2. expdp/impdp导出导入
