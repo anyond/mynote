@@ -96,7 +96,7 @@ Date:&nbsp;&nbsp;Sat May 16 20:49:05 2020 +0800
 </pre><p><strong>三、GIT 底层原理</strong></p><p><strong>1、Git存储对象（hashMap）</strong></p><p>Git 是一个内容寻址文件系统，其核心部分<span style="color: rgb(78, 68, 60);">是一个简单的键值对数据库（key-value data store），你可以向数据库中插入任意内容，它会返回一个用于取回该值的</span>hash 键</p><pre class="ql-syntax" spellcheck="false"># git 键值库中插入数据
 echo 'luban is good man' | git hash-object -w --stdin
 79362d07cf264f8078b489a47132afbc73f87b9a
-生成的ID和视频中的一直，怀疑是通过计算MD5值 
+生成的ID和视频中的一直，怀疑是通过计算MD5值之类的方法生成的
 #基于键获取指定内容
 git cat-file -p 79362d07cf264f8078b489a47132afbc73f87b9a（也可只写前半部分保证唯一即可，不需要写全）
 Git基于该功能 把每个文件的版本中内容都保存在数据库中，当要进行版本回滚的时候就通过其中一个键将期取回并替换。
