@@ -82,8 +82,8 @@ git log
 git log {branch}
 # 单行显示日志
 git log --oneline
-# 比较两个版本的区别
-git log master..experiment
+# 比较两个版本的区别，查看branch2中有哪些提交没有提交到branch1
+git log branch1..branch2
 #以图表的方式显示提交合并网络
 git log --pretty=format:'%h %s' --graph
 </pre><blockquote>log中HEAD -&gt;表示此提交已经提交到了哪些分支和tag</blockquote><pre class="ql-syntax" spellcheck="false">$ git log
