@@ -50,4 +50,9 @@ git checkout &lt;branch name&gt;
 git merge &lt;merge target&gt;
 #删除远程分支
 git push origin --delete dev
-</pre><p><strong>4、标签管理</strong></p><p><br></p><p><strong>5、远程仓库配置</strong></p><p><br></p><p><br></p><p><strong>三、GIT 底层原理</strong></p><p><br></p><attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-53e75804-76e9-4330-ae49-f28147e3cc17"></attachment><p><br></p>
+</pre><blockquote>一、开发分支（dev）上的代码达到上线的标准后，要合并到 master 分支</blockquote><pre class="ql-syntax" spellcheck="false">git checkout dev
+git pull
+git checkout master
+git merge dev
+git push -u origin master
+</pre><blockquote>二、当master代码改动了，需要更新开发分支（dev）上的代码</blockquote><p>git checkout master&nbsp;</p><p>git pull&nbsp;</p><p>git checkout dev</p><p>git merge master&nbsp;</p><p><br></p><p>————————————————</p><p>版权声明：本文为CSDN博主「zl1zl2zl3」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</p><p>原文链接：https://blog.csdn.net/zl1zl2zl3/article/details/94019526</p><p><strong>4、标签管理</strong></p><p><br></p><p><strong>5、远程仓库配置</strong></p><p><br></p><p><br></p><p><strong>三、GIT 底层原理</strong></p><p><br></p><attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-53e75804-76e9-4330-ae49-f28147e3cc17"></attachment><p><br></p>
