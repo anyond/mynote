@@ -34,7 +34,7 @@ git commit file -m '提交评论'
 git commit -am '快添加与提交'
 #创建目录
 mkdir -p src/.../
-</pre><p><strong>3、分支管理</strong></p><blockquote>通过分支管理可以解决不限于以下情况：</blockquote><ol><li>当前正在开发新功能，代码已经有改动，但是需要修复线上bug，需要线上版本创建一个新分支进行修复，避免新功能代码影响线上版本</li><li>同时通过两种不同的方案开发了一个新功能，但是最后根据结果只采用一个，此时需要创建两个新分支分别开发</li></ol><p><strong>master版本应该时刻与线上版本保持一致</strong></p><blockquote>创建分支的方式：</blockquote><ol><li>基于当前分支创建</li><li>基于远程分支创建</li><li>基于一个提交创建</li><li>基于tag创建</li></ol><p><strong>归根到底，都是通过提交来创建</strong></p><pre class="ql-syntax" spellcheck="false">#查看当前分支
+</pre><p><strong>3、分支管理</strong></p><blockquote>通过分支管理可以解决不限于以下情况：</blockquote><ol><li>当前正在开发新功能，代码已经有改动，但是需要修复线上bug，需要线上版本创建一个新分支进行修复，避免新功能代码影响线上版本</li><li>同时通过两种不同的方案开发了一个新功能，但是最后根据结果只采用一个，此时需要创建两个新分支分别开发</li></ol><p><strong>master版本应该时刻与线上版本保持一致</strong></p><blockquote>创建分支和tag的方式：</blockquote><ol><li>基于当前分支创建</li><li>基于远程分支创建</li><li>基于一个提交创建</li><li>基于tag创建</li></ol><p><strong>归根到底，都是通过提交来创建</strong></p><pre class="ql-syntax" spellcheck="false">#查看当前分支
 git branch [-avv]
 #基于当前分支新建分支
 git branch &lt;branch name&gt;
@@ -72,7 +72,7 @@ git push --set-upstream origin master&nbsp;
 git branch --track --set-upstream-to=origin/test test
 </pre><p><strong>5、tag管理</strong></p><p><strong>tag一般对应里程碑，创建之后只读，不能修改，这是与分支最大的区别</strong></p><pre class="ql-syntax" spellcheck="false">#查看当前
 git tag
-#创建分支，与创建分支类似，可以
+#创建分支，与创建分支操作 
 git tag &lt;tag name&gt; &lt;branch name&gt;
 #删除分支
 git tag -d &lt;tag name&gt;
