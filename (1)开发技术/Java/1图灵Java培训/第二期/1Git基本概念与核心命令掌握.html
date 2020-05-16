@@ -76,4 +76,14 @@ git tag
 git tag &lt;tag name&gt; &lt;branch name&gt;
 #删除分支
 git tag -d &lt;tag name&gt;
-</pre><p><br></p><p>$ git log</p><p>commit 95d2f38ca51de9a9c7387a7190e869b70492dc9f (HEAD -&gt; master, origin2/master, origin/master)</p><p>Author: muye &lt;anyondmy@163.com&gt;</p><p>Date:&nbsp;&nbsp;Sat May 16 20:49:05 2020 +0800</p><p><br></p><p>&nbsp;&nbsp;8 commit</p><p><br></p><p><strong>三、GIT 底层原理</strong></p><p><br></p><attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-53e75804-76e9-4330-ae49-f28147e3cc17"></attachment><p><br></p>
+</pre><p><strong>6、日志管理</strong></p><p><br></p><pre class="ql-syntax" spellcheck="false">#查看当前分支下所有提交日志
+git log
+#查看当前分支下所有提交日志
+git log {branch}
+# 单行显示日志
+git log --oneline
+# 比较两个版本的区别
+git log master..experiment
+#以图表的方式显示提交合并网络
+git log --pretty=format:'%h %s' --graph
+</pre><p>log中HEAD -&gt;表示此提交已经提交到了哪些分支和tag</p><p>$ git log</p><p>commit 95d2f38ca51de9a9c7387a7190e869b70492dc9f (HEAD -&gt; master, origin2/master, origin/master)</p><p>Author: muye &lt;anyondmy@163.com&gt;</p><p>Date:&nbsp;&nbsp;Sat May 16 20:49:05 2020 +0800</p><p><br></p><p>&nbsp;&nbsp;8 commit</p><p><br></p><p><strong>三、GIT 底层原理</strong></p><p><br></p><attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-53e75804-76e9-4330-ae49-f28147e3cc17"></attachment><p><br></p>
