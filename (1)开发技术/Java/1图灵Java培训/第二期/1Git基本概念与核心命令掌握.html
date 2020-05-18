@@ -124,10 +124,10 @@ committer muye &lt;anyondmy@163.com&gt; 1589813315 +0800
 hi
 </pre><p>通过上面的知识，我们可以推测出从修改一个文件到提交的过程总共生成了三个对像：</p><ol><li>一个内容对象 ==&gt; 存储了文件内容</li><li>一个树对像 ==&gt; 存储了文件名及内容对像的key</li><li>一个提交对像 ==&gt; 存储了树对像的key 及提交评论</li></ol><p><br></p><p><strong>4、Git引用</strong></p><blockquote>当我们执行 git branch {branchName} 时创建了一个分支，其本质就是在git 基于指定提交创建了一个引用文件，保存在 .git\refs\heads\ 下。</blockquote><p>演示分支的创建</p><pre class="ql-syntax" spellcheck="false">&nbsp;git branch dev 
 &nbsp;cat.git\refs\heads\dev
-</pre><p>git 总共 有三种类型的引用：</p><ol><li>分支引用</li><li>远程分支引用</li><li>标签引用</li></ol><p><br></p><pre class="ql-syntax" spellcheck="false">#查询比较两个版本
+</pre><p>git 总共 有三种类型的引用：</p><ol><li>分支引用</li><li>远程分支引用</li><li>标签引用</li></ol><pre class="ql-syntax" spellcheck="false">#查询比较两个版本
 git log master..experiment
 
-#版本提交历史网络
+#版本提交历史网络（%h %s显示hash码前几位和评论）
 git log --pretty=format:'%h %s' --graph
 
 #查看分支树
