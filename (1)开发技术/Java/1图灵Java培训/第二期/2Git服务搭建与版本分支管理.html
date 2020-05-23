@@ -1,8 +1,7 @@
-<attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-17738a5f-3fe6-4ac7-9b98-b0fad43f7af4"></attachment><blockquote>说明</blockquote><ol><li>github 开发源码存储服务</li><li>gitlab web项目提供了源码管理功能</li><li>码云 oschina 提供一个商业化的源码服务</li><li>码市 coding 提供一个商业化的源码服务</li></ol><p><br></p><p><strong>一、Git服务器搭建方式</strong></p><p><br></p><blockquote>git支持的四种通信协议</blockquote><ol><li>Local(本地协议)</li><li>ssh</li><li>http(Dumb、Smart)</li><li>git</li></ol><p><br></p><p><strong>1、Local(本地协议)</strong></p><p>基于本地文件系统或共享（NFS）文件系统进行访问</p><p><strong>优点：</strong>简单，直接使用了现有的文件权限和网络访问权限，小团队小项目建立一个这样的版本管理系统是非常轻松的一件事。</p><p><strong>缺点：</strong>这种协议缺陷就是本身共享文件系统的局限，只能在局域网，而且速度也慢。</p><p><strong>适应场景：</strong>小团队，小项目临时搭建版本服务。</p><p><br></p><p>演示本地协议使用方式：</p><pre class="ql-syntax" spellcheck="false"># 从本地 /s/git-repository/
- 目录克隆项目
+<attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-17738a5f-3fe6-4ac7-9b98-b0fad43f7af4"></attachment><blockquote>说明</blockquote><ol><li>github 开发源码存储服务</li><li>gitlab web项目提供了源码管理功能</li><li>码云 oschina 提供一个商业化的源码服务</li><li>码市 coding 提供一个商业化的源码服务</li></ol><p><br></p><p><strong>一、Git服务器搭建方式</strong></p><p><br></p><blockquote>git支持的四种通信协议</blockquote><ol><li>Local(本地协议)</li><li>ssh</li><li>http(Dumb、Smart)</li><li>git</li></ol><p><br></p><p><strong>1、Local(本地协议)</strong></p><p>基于本地文件系统或共享（NFS）文件系统进行访问</p><p><strong>优点：</strong>简单，直接使用了现有的文件权限和网络访问权限，小团队小项目建立一个这样的版本管理系统是非常轻松的一件事。</p><p><strong>缺点：</strong>这种协议缺陷就是本身共享文件系统的局限，只能在局域网，而且速度也慢。</p><p><strong>适应场景：</strong>小团队，小项目临时搭建版本服务。</p><p><br></p><p>演示本地协议使用方式：</p><pre class="ql-syntax" spellcheck="false"># 从本地 /s/git-repository/目录克隆项目
 git clone /s/git-repository/ muye2
 # 即使是 bare仓库也可以正常下载
 git clone /s/git-repository/muye.git muye2
 # 基于file 协议克隆本地项目
-git clone file:///f/git/atals/
-</pre><blockquote>如果在 URL 开头明确的指定 file://，那么 Git 的行为会略有不同。 如果仅是指定路径，Git 会尝试使用硬链接（hard link）或直接复制所需要的文件。如果指定 file://，Git 会触发平时用于网路传输资料的进程，传输过来的是打包好的文件,更节约硬盘空间。</blockquote><p><br></p><p><br></p>
+git clone file:///s/git-repository/muye.git muye2
+</pre><blockquote>如果在 URL 开头明确的指定 file://，那么 Git 的行为会略有不同。 如果仅是指定路径，Git 会尝试使用硬链接（hard link）或直接复制所需要的文件。如果指定 file://，Git 会触发平时用于网路传输资料的进程，传输过来的是打包好的文件,更节约硬盘空间。</blockquote><p><br></p><p><strong>2、SSH协议</strong></p><p><br></p>
