@@ -93,7 +93,7 @@ Date:&nbsp;&nbsp;Sat May 16 20:49:05 2020 +0800
 
 &nbsp;&nbsp;8 commit
 </pre><p>查看某个分支最后一次提交的详细信息，不指定分支默认当前分支</p><p><br></p><pre class="ql-syntax" spellcheck="false">git show master
-</pre><p><strong>三、GIT 底层原理</strong></p><p><strong>1、Git存储对象（hashMap）</strong></p><p>Git 是一个内容寻址文件系统，其核心部分<span style="color: rgb(78, 68, 60);">是一个简单的键值对数据库（key-value data store），你可以向数据库中插入任意内容，它会返回一个用于取回该值的</span>hash 键</p><p><br></p><pre class="ql-syntax" spellcheck="false"># git 键值库中插入数据
+</pre><p><strong>三、GIT 底层原理</strong></p><p><strong>1、Git存储对象（hashMap）</strong></p><p>Git 是一个内容寻址文件系统，其核心部分<span style="color: rgb(78, 68, 60);">是一个简单的键值对数据库（key-value data store），你可以向数据库中插入任意内容，它会返回一个用于取回该值的</span>hash 键</p><pre class="ql-syntax" spellcheck="false"># git 键值库中插入数据
 echo 'luban is good man' | git hash-object -w --stdin
 79362d07cf264f8078b489a47132afbc73f87b9a
 生成的ID和视频中的一直，通过hash码产生的
