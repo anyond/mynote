@@ -34,7 +34,7 @@ git commit file -m '提交评论'
 git commit -am '快添加与提交'，如果文件原来已经存在无需add可直接commit，否则必须add后才能commit
 #创建目录
 mkdir -p src/.../
-</pre><p><strong>3、分支管理</strong></p><p>通过分支管理可以解决不限于以下情况：</p><ol><li>当前正在开发新功能，代码已经有改动，但是需要修复线上bug，需要线上版本创建一个新分支进行修复，避免新功能代码影响线上版本</li><li>同时通过两种不同的方案开发了一个新功能，但是最后根据结果只采用一个，此时需要创建两个新分支分别开发</li></ol><blockquote>master版本应该时刻与线上版本保持一致</blockquote><p>创建分支和tag的方式：</p><ol><li>基于当前分支创建</li><li>基于远程分支创建</li><li>基于一个提交创建</li><li>基于tag创建</li></ol><p><strong>归根到底，都是通过提交来创建</strong></p><pre class="ql-syntax" spellcheck="false">#查看当前分支
+</pre><p><strong>3、分支管理</strong></p><p>通过分支管理可以解决不限于以下情况：</p><ol><li>当前正在开发新功能，代码已经有改动，但是需要修复线上bug，需要线上版本创建一个新分支进行修复，避免新功能代码影响线上版本</li><li>同时通过两种不同的方案开发了一个新功能，但是最后根据结果只采用一个，此时需要创建两个新分支分别开发</li></ol><blockquote>master版本应该时刻与线上版本保持一致</blockquote><p>创建分支和tag的方式：</p><ol><li>基于当前分支创建</li><li>基于远程分支创建</li><li>基于一个提交创建</li><li>基于tag创建</li></ol><blockquote>归根到底，都是通过提交来创建</blockquote><pre class="ql-syntax" spellcheck="false">#查看当前分支
 git branch [-avv]
 #基于当前分支新建分支
 git branch &lt;branch name&gt;
@@ -50,12 +50,12 @@ git checkout &lt;branch name&gt;
 git merge &lt;merge target&gt;
 #删除远程分支
 git push origin --delete dev
-</pre><blockquote>一、开发分支（dev）上的代码达到上线的标准后，要合并到 master 分支</blockquote><pre class="ql-syntax" spellcheck="false">git checkout dev
+</pre><p>一、开发分支（dev）上的代码达到上线的标准后，要合并到 master 分支</p><pre class="ql-syntax" spellcheck="false">git checkout dev
 git pull
 git checkout master
 git merge dev
 git push -u origin master
-</pre><blockquote>二、当master代码改动了，需要更新开发分支（dev）上的代码</blockquote><pre class="ql-syntax" spellcheck="false">git checkout master&nbsp;
+</pre><p>二、当master代码改动了，需要更新开发分支（dev）上的代码</p><pre class="ql-syntax" spellcheck="false">git checkout master&nbsp;
 git pull&nbsp;
 git checkout dev
 git merge master&nbsp;
@@ -70,7 +70,7 @@ git remote remove origin&nbsp;
 git push --set-upstream origin master&nbsp;
 #将本地分支与远程建立关联
 git branch --track --set-upstream-to=origin/test test
-</pre><p><strong>5、tag管理</strong></p><p><strong>tag一般对应里程碑，创建之后只读，不能修改，这是与分支最大的区别</strong></p><pre class="ql-syntax" spellcheck="false">#查看当前
+</pre><p><strong>5、tag管理</strong></p><blockquote>tag一般对应里程碑，创建之后只读，不能修改，这是与分支最大的区别</blockquote><pre class="ql-syntax" spellcheck="false">#查看当前
 git tag
 #创建分支，与创建分支操作基本相同，这里不再过多描述
 git tag &lt;tag name&gt; &lt;branch name&gt;
@@ -86,21 +86,21 @@ git log --oneline
 git log branch1..branch2
 #以图表的方式显示提交合并网络
 git log --pretty=format:'%h %s' --graph
-</pre><blockquote>log中HEAD -&gt;表示此提交已经提交到了哪些分支和tag</blockquote><pre class="ql-syntax" spellcheck="false">$ git log
+</pre><p>log中HEAD -&gt;表示此提交已经提交到了哪些分支和tag</p><pre class="ql-syntax" spellcheck="false">$ git log
 commit 95d2f38ca51de9a9c7387a7190e869b70492dc9f (HEAD -&gt; master, origin2/master, origin/master)
 Author: muye &lt;anyondmy@163.com&gt;
 Date:&nbsp;&nbsp;Sat May 16 20:49:05 2020 +0800
 
 &nbsp;&nbsp;8 commit
-</pre><blockquote>查看某个分支最后一次提交的详细信息，不指定分支默认当前分支</blockquote><pre class="ql-syntax" spellcheck="false">git show master
-</pre><p><strong>三、GIT 底层原理</strong></p><p><strong>1、Git存储对象（hashMap）</strong></p><blockquote>Git 是一个内容寻址文件系统，其核心部分<span style="color: rgb(78, 68, 60);">是一个简单的键值对数据库（key-value data store），你可以向数据库中插入任意内容，它会返回一个用于取回该值的</span>hash 键</blockquote><pre class="ql-syntax" spellcheck="false"># git 键值库中插入数据
+</pre><p>查看某个分支最后一次提交的详细信息，不指定分支默认当前分支</p><pre class="ql-syntax" spellcheck="false">git show master
+</pre><p><strong>三、GIT 底层原理</strong></p><p><strong>1、Git存储对象（hashMap）</strong></p><p>Git 是一个内容寻址文件系统，其核心部分<span style="color: rgb(78, 68, 60);">是一个简单的键值对数据库（key-value data store），你可以向数据库中插入任意内容，它会返回一个用于取回该值的</span>hash 键</p><pre class="ql-syntax" spellcheck="false"># git 键值库中插入数据
 echo 'luban is good man' | git hash-object -w --stdin
 79362d07cf264f8078b489a47132afbc73f87b9a
 生成的ID和视频中的一直，通过hash码产生的
 #基于键获取指定内容
 git cat-file -p 79362d07cf264f8078b489a47132afbc73f87b9a（也可只写前半部分保证唯一即可，不需要写全）
 Git基于该功能 把每个文件的版本中内容都保存在数据库中，当要进行版本回滚的时候就通过其中一个键将期取回并替换。
-</pre><blockquote>模拟演示git 版写入与回滚过程</blockquote><pre class="ql-syntax" spellcheck="false"># 查找所有的git 对像
+</pre><p>模拟演示git 版写入与回滚过程</p><pre class="ql-syntax" spellcheck="false"># 查找所有的git 对像
 &nbsp;&nbsp;find .git/objects/ -type f
 # 写入版本1
 echo 'version1' &gt; README.MF; git hash-object -w README.MF;
